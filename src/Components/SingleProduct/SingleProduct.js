@@ -9,6 +9,7 @@ const SingleProduct = () => {
   const dispatch=useDispatch()
   // const productDetails?=useSelector((prod)=>prod.products.selectedProduct)[0];
   // console.log("product",productDetails?.id)
+  
   const [productDetails,setProductDetails]=useState({})
   useEffect(()=>{
     const data=localStorage.getItem('productDetails')
