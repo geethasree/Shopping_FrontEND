@@ -1,0 +1,33 @@
+.navigatebutton{
+    padding:8px 20px;
+    margin:5px 10px;
+    color: #ac868a;
+    border:2px solid #ac868a;
+    border-radius:10px;  
+    font-weight: bold;
+    transition:all 0.4s ease;
+    
+}
+.navigatebutton:hover{
+    background:#ac868a;
+    color:#f0f0f0;
+    cursor:pointer;
+}
+.active .navigatebutton{
+    background:#ac868a;
+    color:#f0f0f0;
+    
+}
+.flex-box{
+    display:flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width:80%;
+    margin:0px auto;
+    justify-content: center;
+    align-items: center;
+    padding:20px 0px;
+}
+.sales{
+    color:#ac868a;
+}

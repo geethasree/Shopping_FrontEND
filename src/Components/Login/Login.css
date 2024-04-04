@@ -1,0 +1,52 @@
+
+.CentralPart1{
+    display: flex;justify-content: center;margin-top: 50px;
+}
+
+.LoginSection{
+    border:1px solid #fff; padding: 30px; box-shadow: 0px 5px 15px rgba(0,0,0,0.15);width: 40vw;
+}
+
+
+.LoginHeading1{
+    font-size: 20px; font-weight: 500; margin-top: 2px; text-align: center;
+}
+.LoginHeading2{
+    font-size: 15px; color: #555; margin-top: 10px; margin-bottom: 30px; text-align: center;
+}
+
+.username1,.Password1{
+    font-weight: 500; margin-top: 15px; font-size: 18px;align-self: flex-start;margin-left: 15px;
+}
+.Inputs1{
+    border: none;  outline: none;font-size: 16px; padding:10px 5px 10px 15px; border-color: white;
+}
+
+.InputsWithIcons1{
+    border: 1px solid white; border-bottom-color: #aaa; padding-left:15px;
+    display: flex; align-items: center;
+}
+.LoginPart{
+    display: flex;flex-direction: column;
+}
+::placeholder { 
+    color: #ccc;
+  }
+.input1:focus{
+    outline: none;
+}
+.InputIcon{
+    font-size: 20px;color: #ac868a;
+}
+.LoginButton{
+   background-color: #ac868a; color: white; text-align: center;  padding: 10px; cursor: pointer; border-radius: 10px;
+   margin-top: 10px;
+}
+.forgot_password{
+    cursor: pointer;
+}
+
+
+
+
+
