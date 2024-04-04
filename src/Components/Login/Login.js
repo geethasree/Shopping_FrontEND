@@ -93,7 +93,7 @@ export default function Login() {
                     <div type='submit' style={{ textDecoration: "none" }} onClick={signIn} className='LoginButton'>
                         {
                             !isLoading ?
-                                <span>Login</span> :
+                                <span className='login_button_text'>Login</span> :
                                 <div style={{ display: "flex", justifyContent: "center" }}><ReactLoading type="spin" color="white" height={30} width={30} /></div>
                         }
                     </div>

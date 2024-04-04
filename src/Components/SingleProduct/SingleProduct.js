@@ -1,32 +1,36 @@
-import React from 'react'
+import React,{useEffect,useState} from 'react'
 import {useParams} from 'react-router-dom'
 import {useSelector,useDispatch} from 'react-redux'
 import { addToCart } from '../Features/Slices/cartSlice'
 import './style.css'
 import { Navbar } from '../Navbar/Navbar'
 const SingleProduct = () => {
-
   const {type,id}=useParams()
   const dispatch=useDispatch()
-  const selectedproduct=useSelector((prod)=>prod.products.selectedProduct)[0];
-  console.log("product",selectedproduct.id)
+  // const productDetails?=useSelector((prod)=>prod.products.selectedProduct)[0];
+  // console.log("product",productDetails?.id)
+  const [productDetails,setProductDetails]=useState({})
+  useEffect(()=>{
+    const data=localStorage.getItem('productDetails')
+   data && setProductDetails(JSON.parse(data))
+  },[])
+  
   return (
     <>
         <Navbar />
         <div class='flex-container'>
             <div class='flex-item-img'>
-              <img src={selectedproduct.img} />
+              <img src={productDetails?.img} />
             </div>
             <div class='item-description'>
-              <h2>{selectedproduct.name}</h2>
-              <p>{selectedproduct.text}</p>
-              <p><b>Category : </b>{selectedproduct.type}</p>
-              {console.log(selectedproduct)}
+              <h2>{productDetails?.name}</h2>
+              <p>{productDetails?.text}</p>
+              <p><b>Category : </b>{productDetails?.type}</p>
               <p><b>Choose Size </b></p>
               <select id='size'>
                 
                 {
-                  selectedproduct.size.map((eachSize)=><option value={eachSize}>{eachSize}</option>)
+                 productDetails?.size &&  JSON.parse(productDetails?.size).map((eachSize)=><option value={eachSize}>{eachSize}</option>)
                 }
               </select>
               <br />
@@ -34,22 +38,22 @@ const SingleProduct = () => {
               <select id='color'>
                 
                 {
-                  selectedproduct.color.map((eachColor)=><option value={eachColor}>{eachColor}</option>)
+                  productDetails?.color && JSON.parse(productDetails?.color).map((eachColor)=><option value={eachColor}>{eachColor}</option>)
                 }
               </select>
               <br />
               <br />
               <button class='addtocartbtn' onClick={()=>dispatch(addToCart(
                 {
-                  id:selectedproduct.id,
-                  name:selectedproduct.name,
+                  id:productDetails?.id,
+                  name:productDetails?.name,
                   size:document.querySelector('#size').value,
                   color:document.querySelector('#color').value,
-                  img:selectedproduct.img,
-                  text:selectedproduct.text,
-                  price:selectedproduct.price,
+                  img:productDetails?.img,
+                  text:productDetails?.text,
+                  price:productDetails?.price,
                   amount:1,
-                  totalprice:selectedproduct.price
+                  totalprice:productDetails?.price
                 }
               ))}>Add to Cart</button>
             </div>

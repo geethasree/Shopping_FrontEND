@@ -4,7 +4,7 @@ const ProductsSlice=createSlice({
     name:'filtered products',
     initialState:{
         filteredProducts:JSON.parse(sessionStorage.getItem('filteredData')) || storeData,
-        productCategories:['Hoodies','Dresses','Suits','Shoes','T-Shirts','Jeans','Jackets','Bags'],
+        productCategories:['    '],
         selectedProduct:'' || JSON.parse(sessionStorage.getItem('selecteditem'))
     },
     reducers:{
