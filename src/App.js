@@ -8,6 +8,7 @@ const SingleProduct = React.lazy(() => import('./Components/SingleProduct/Single
 const Cart = React.lazy(() => import('./Components/Cart/Cart'))
 const Login=React.lazy(()=>import('./Components/Login/Login'))
 const Signup=React.lazy(()=>import('./Components/Signup/Signup'))
+const Dashboard=React.lazy(()=>import('./Components/Dashboard/Dashboard'))
 
 function App() {
 
@@ -40,6 +41,13 @@ function App() {
               <Main />
             </React.Suspense>}>
           </Route>
+
+          <Route path='/dashboard' element={
+            <React.Suspense fallback='Loading Dashboard Component'>
+              <Dashboard />
+            </React.Suspense>}>
+          </Route>
+
           <Route path='/filteredProducts/:type' element={
             <React.Suspense fallback='Loading Filtered Products Component'>
               <FilteredProducts />

@@ -6,7 +6,6 @@ import FilteredProducts from '../FilteredProducts/FilteredProducts'
 export const Main = () => {
   return (
     <div>
-        <div>Main</div>
         <Navbar />
         <Slider />
         <Navigatebuttons />
