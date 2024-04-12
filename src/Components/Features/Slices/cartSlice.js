@@ -34,6 +34,7 @@ export const cartSlice = createSlice({
             name: productId.name,
             text: productId.text,
             color: productId.color,
+            type:productId.type
           });
           state.totalAmount++;
           state.totalPrice += productId.price;

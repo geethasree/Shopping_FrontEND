@@ -1,17 +1,15 @@
 import React,{useState,useEffect} from 'react'
 import '../Cart/style.css'
-import { useSelector } from 'react-redux'
-import { useDispatch } from 'react-redux'
-import {removeFromCart} from '../Features/Slices/cartSlice'
+
 import {Navbar} from '../Navbar/Navbar'
 import axios from 'axios'
+
 
 const Cart = () => {
     const [orderList,setorderList]=useState([])
     
 useEffect(()=>{
   axios.post('http://localhost:3001/getOrders',{email:localStorage.getItem('email')}).then((res)=>{
-    // console.log(res.data);
     setorderList(res.data)
 })
 .catch((err)=>{
@@ -41,6 +39,7 @@ useEffect(()=>{
         }
         {orderList && orderList.length===0 && <p>No Orders yet 😥</p>
         }
+      
             
     </div>
     </>

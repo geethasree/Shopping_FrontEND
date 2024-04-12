@@ -8,7 +8,9 @@ const SingleProduct = React.lazy(() => import('./Components/SingleProduct/Single
 const Cart = React.lazy(() => import('./Components/Cart/Cart'))
 const Login=React.lazy(()=>import('./Components/Login/Login'))
 const Signup=React.lazy(()=>import('./Components/Signup/Signup'))
-const Dashboard=React.lazy(()=>import('./Components/Dashboard/Dashboard'))
+const Orders=React.lazy(()=>import('./Components/Dashboard/Dashboard'))
+const Dashboard=React.lazy(()=>import('./Components/Dashboard1/Dashboard1'))
+
 
 function App() {
 
@@ -39,6 +41,12 @@ function App() {
           <Route path='/home' element={
             <React.Suspense fallback='Loading Main Component'>
               <Main />
+            </React.Suspense>}>
+          </Route>
+
+          <Route path='/orders' element={
+            <React.Suspense fallback='Loading Dashboard Component'>
+              <Orders />
             </React.Suspense>}>
           </Route>
 

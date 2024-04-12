@@ -19,8 +19,12 @@ export const Navbar = () => {
         <div className="flex-item-nav-menu" onClick={()=>navigate('/')} style={{cursor:'pointer'}}>
             Logout
         </div>
-        <div className="flex-item-nav-menu" onClick={()=>navigate('/dashboard')} style={{cursor:'pointer'}}>
+        <div className="flex-item-nav-menu" onClick={()=>navigate('/orders')} style={{cursor:'pointer'}}>
             Your Orders
+        </div>
+
+        <div className="flex-item-nav-menu" onClick={()=>navigate('/dashboard')} style={{cursor:'pointer'}}>
+            Dashboard
         </div>
         <div className="flex-item-nav-menu caregorybtn" onClick={()=>setShowcategories(!showcategories)}>
             {showcategories?'Hide Categories':'Show Categories'}

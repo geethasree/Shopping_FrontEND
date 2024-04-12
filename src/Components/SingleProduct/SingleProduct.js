@@ -54,7 +54,8 @@ const SingleProduct = () => {
                   text:productDetails?.text,
                   price:productDetails?.price,
                   amount:1,
-                  totalprice:productDetails?.price
+                  totalprice:productDetails?.price,
+                  type:productDetails?.type
                 }
               ))}>Add to Cart</button>
             </div>
